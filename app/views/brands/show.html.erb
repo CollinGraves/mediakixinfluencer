@@ -1,14 +1,26 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Brand -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Brand %></h1>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @brand.name %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:name) %></dt>
+      <dd><pre class="prettyprint"><%= @brand.name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:slug) %></dt>
+      <dd><pre class="prettyprint"><%= @brand.slug %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Slug:</strong>
-  <%= @brand.slug %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              brands_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_brand_path(@brand), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              brand_path(@brand),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<%= link_to 'Edit', edit_brand_path(@brand) %> |
-<%= link_to 'Back', brands_path %>

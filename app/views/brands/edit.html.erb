@@ -1,6 +1,5 @@
-<h1>Editing brand</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @brand %> |
-<%= link_to 'Back', brands_path %>
+<%- model_class = Brand -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Brand %></h1>
+</div>
+<%= render :partial => 'form' %>
