@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: mediakixinfluencer_production
-  username: mediakixinfluencer
-  password: <%= ENV['MEDIAKIXINFLUENCER_DATABASE_PASSWORD'] %>
+  username: collingraves
+  password:
