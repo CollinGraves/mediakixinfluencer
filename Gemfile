@@ -52,6 +52,10 @@ gem 'omniauth-facebook'
 gem 'tzinfo-data'
 gem 'validates_formatting_of'
 
+group :production do
+  gem 'rails_12factor'
+end
+
 group :development, :test do
   gem 'dotenv-rails'
   gem 'rspec-rails'
