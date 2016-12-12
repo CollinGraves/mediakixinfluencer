@@ -1,29 +1,38 @@
-<h1>Listing platform_campaigns</h1>
-
-<table>
+<%- model_class = PlatformCampaign -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => PlatformCampaign %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Contract num</th>
-      <th>Brand</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:contract_num) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @platform_campaigns.each do |platform_campaign| %>
       <tr>
+        <td><%= platform_campaign.id %></td>
         <td><%= platform_campaign.name %></td>
         <td><%= platform_campaign.contract_num %></td>
-        <td><%= platform_campaign.brand %></td>
-        <td><%= link_to 'Show', platform_campaign %></td>
-        <td><%= link_to 'Edit', edit_platform_campaign_path(platform_campaign) %></td>
-        <td><%= link_to 'Destroy', platform_campaign, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l platform_campaign.created_at, format: :long %></td>
+        <td>
+          <%= link_to platform_campaign_path(platform_campaign), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to platform_campaign_path(platform_campaign), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Platform campaign', new_platform_campaign_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_platform_campaign_path,
+            :class => 'btn btn-primary' %>
