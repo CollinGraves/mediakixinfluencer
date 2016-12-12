@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :influencers
+
   resources :platform_campaigns
 
   resources :brands
