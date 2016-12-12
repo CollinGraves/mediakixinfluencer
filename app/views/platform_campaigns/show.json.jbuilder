@@ -1,0 +1,1 @@
+json.partial! "platform_campaigns/platform_campaign", platform_campaign: @platform_campaign

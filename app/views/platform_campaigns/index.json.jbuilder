@@ -1,0 +1,1 @@
+json.array! @platform_campaigns, partial: 'platform_campaigns/platform_campaign', as: :platform_campaign

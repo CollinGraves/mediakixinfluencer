@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @platform_campaign.name %>
+</p>
+
+<p>
+  <strong>Contract num:</strong>
+  <%= @platform_campaign.contract_num %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @platform_campaign.brand %>
+</p>
+
+<%= link_to 'Edit', edit_platform_campaign_path(@platform_campaign) %> |
+<%= link_to 'Back', platform_campaigns_path %>
