@@ -1,24 +1,30 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Influencer -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Influencer %></h1>
+</div>
 
-<p>
-  <strong>First name:</strong>
-  <%= @influencer.first_name %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:first_name) %></dt>
+      <dd><pre class="prettyprint"><%= @influencer.first_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:last_name) %></dt>
+      <dd><pre class="prettyprint"><%= @influencer.last_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:email) %></dt>
+      <dd><pre class="prettyprint"><%= @influencer.email %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:phone) %></dt>
+      <dd><pre class="prettyprint"><%= @influencer.phone %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @influencer.last_name %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              influencers_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_influencer_path(@influencer), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              influencer_path(@influencer),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @influencer.email %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @influencer.phone %>
-</p>
-
-<%= link_to 'Edit', edit_influencer_path(@influencer) %> |
-<%= link_to 'Back', influencers_path %>

@@ -1,6 +1,5 @@
-<h1>Editing influencer</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @influencer %> |
-<%= link_to 'Back', influencers_path %>
+<%- model_class = Influencer -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Influencer %></h1>
+</div>
+<%= render :partial => 'form' %>
