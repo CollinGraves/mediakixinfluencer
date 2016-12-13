@@ -28,6 +28,12 @@ GIT
       responders
       warden (~> 1.2.3)
 
+GIT
+  remote: git://github.com/vigetlabs/active_material.git
+  revision: c67d6854259baed79b35ec8413704ee3783582c8
+  specs:
+    active_material (1.4.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -301,6 +307,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_material!
   activeadmin!
   better_errors
   binding_of_caller
