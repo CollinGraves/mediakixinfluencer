@@ -47,7 +47,7 @@ gem 'simple_form'
 gem 'delayed_job_active_record'
 gem 'bootstrap-sass', '3.3.5'
 gem 'bootstrap-sass-extras'
-gem "active_material", github: "vigetlabs/active_material"
+gem 'active_admin_theme'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'tzinfo-data'
