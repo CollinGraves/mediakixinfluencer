@@ -41,6 +41,7 @@ gem 'spring',        group: :development
 gem 'bundler'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'active_admin_importable'
 gem 'devise', github: 'plataformatec/devise'
 gem 'binding_of_caller'
 gem 'simple_form'

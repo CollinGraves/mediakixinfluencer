@@ -1,4 +1,5 @@
 ActiveAdmin.register Influencer do
+  active_admin_importable
   permit_params :first_name, :last_name, :email, :phone
 
 # See permitted parameters documentation:
