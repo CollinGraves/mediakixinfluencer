@@ -61,6 +61,9 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.0)
       public_suffix (~> 2.0, >= 2.0.2)
+    annotate (2.6.5)
+      activerecord (>= 2.3.0)
+      rake (>= 0.8.7)
     arbre (1.1.1)
       activesupport (>= 3.0.0)
     arel (5.0.1.20140414130214)
@@ -306,6 +309,7 @@ DEPENDENCIES
   active_admin_importable
   active_admin_theme
   activeadmin!
+  annotate
   better_errors
   binding_of_caller
   bootstrap-sass (= 3.3.5)
