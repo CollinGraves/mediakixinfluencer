@@ -1,0 +1,2 @@
+class BlogPublishingPlatform < PublishingPlatform
+end

@@ -1,0 +1,2 @@
+class VinePublishingPlatform < PublishingPlatform
+end

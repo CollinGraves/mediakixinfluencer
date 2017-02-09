@@ -1,0 +1,2 @@
+class FacebookPublishingPlatform < PublishingPlatform
+end

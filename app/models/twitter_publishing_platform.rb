@@ -1,0 +1,2 @@
+class TwitterPublishingPlatform < PublishingPlatform
+end

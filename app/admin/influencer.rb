@@ -1,6 +1,8 @@
 ActiveAdmin.register Influencer do
   permit_params :first_name, :last_name, :email, :phone
 
+  # filter :associated_markets_id, collection: proc { Market.all }, as: :select
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #

@@ -1,0 +1,2 @@
+class YoutubePublishingPlatform < PublishingPlatform
+end

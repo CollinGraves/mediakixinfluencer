@@ -1,0 +1,2 @@
+class SnapchatPublishingPlatform < PublishingPlatform
+end

@@ -1,5 +1,5 @@
 ActiveAdmin.register PublishingPlatform do
-  permit_params :name, :subscriber_count, :sponsorship_rate, :notes
+  permit_params :name, :subscriber_count, :sponsorship_rate, :notes, :type
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
