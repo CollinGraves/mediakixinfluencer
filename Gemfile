@@ -25,6 +25,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
+gem 'annotate'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -41,12 +42,14 @@ gem 'spring',        group: :development
 gem 'bundler'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'active_admin_importable'
 gem 'devise', github: 'plataformatec/devise'
 gem 'binding_of_caller'
 gem 'simple_form'
 gem 'delayed_job_active_record'
 gem 'bootstrap-sass', '3.3.5'
 gem 'bootstrap-sass-extras'
+gem 'active_admin_theme'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'tzinfo-data'
