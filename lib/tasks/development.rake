@@ -24,7 +24,7 @@ namespace :dev do
 
     publishing_platforms = []
 
-    influencers = FactoryGirl.create_list(:influencer, 20)
+    influencers = FactoryGirl.create_list(:influencer, 20, :with_address)
 
     influencers.each do |influencer|
       publishing_platform = FactoryGirl.create(publishing_platforms_types.sample)

@@ -47,5 +47,9 @@ FactoryGirl.define do
     licensing_included false
     fubr false
     staff_pick false
+
+    trait :with_address do
+      address
+    end
   end
 end
