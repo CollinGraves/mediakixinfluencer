@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170220163119) do
+ActiveRecord::Schema.define(version: 20170220165149) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -167,10 +167,12 @@ ActiveRecord::Schema.define(version: 20170220163119) do
     t.integer  "snaps"
     t.integer  "opens"
     t.integer  "retweets"
+    t.integer  "publishing_platform_id"
   end
 
   add_index "platform_campaigns", ["brand_id"], name: "index_platform_campaigns_on_brand_id", using: :btree
   add_index "platform_campaigns", ["campaign_id"], name: "index_platform_campaigns_on_campaign_id", using: :btree
+  add_index "platform_campaigns", ["publishing_platform_id"], name: "index_platform_campaigns_on_publishing_platform_id", using: :btree
 
   create_table "publishing_platforms", force: true do |t|
     t.string   "name"

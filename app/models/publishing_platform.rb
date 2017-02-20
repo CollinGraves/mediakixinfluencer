@@ -27,4 +27,5 @@
 class PublishingPlatform < ActiveRecord::Base
   has_many :platform_accounts
   has_many :influencers, through: :platform_accounts
+  has_many :platform_campaigns
 end
