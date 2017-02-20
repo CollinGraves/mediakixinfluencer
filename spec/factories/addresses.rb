@@ -16,11 +16,13 @@
 
 FactoryGirl.define do
   factory :address do
-    primary_address "MyString"
-    secondary_address "MyString"
-    city "MyString"
-    state "MyString"
-    zipcode "MyString"
-    influencer nil
+    influencer
+
+    primary_address { Faker::Address.street_address }
+    secondary_address { Faker::Address.secondary_address }
+    city { Faker::Address.city }
+    state { Faker::Address.state }
+    zipcode { Faker::Address.zip_code }
+    country { Faker::Address.country }
   end
 end
