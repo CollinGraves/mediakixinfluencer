@@ -28,8 +28,30 @@
 #
 
 class Influencer < ActiveRecord::Base
-  has_one :address
 
-  has_many :platform_accounts
+  KIDS_AGE_RANGES = ['No kids', '18+', '14-18', '11-14', '5-111', '2-5', 'Infant']
+
+  GENDERS = {
+    'Male' => true,
+    'Female' => false
+  }
+
+  PETS = ['Dogs', 'Cats', 'Bird', 'Other']
+
+  enum primary_language: {
+    english: 1,
+    spanish: 2,
+    chinese: 3,
+    japanese: 4,
+    russian: 5,
+    portuguese: 6,
+    french: 7,
+    italian: 8,
+    german: 9
+  }
+
+  has_one :address, dependent: :destroy
+
+  has_many :platform_accounts, dependent: :destroy
   has_many :publishing_platforms, through: :platform_accounts
 end

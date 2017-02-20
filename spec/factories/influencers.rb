@@ -29,9 +29,23 @@
 
 FactoryGirl.define do
   factory :influencer do
-    first_name "MyString"
-    last_name "MyString"
-    email "MyString"
-    phone "MyString"
+    first_name { Faker::Name.first_name }
+    last_name { Faker::Name.last_name }
+    email { Faker::Internet.email }
+    phone { Faker::PhoneNumber.phone_number }
+    age { Faker::Number.between(15, 70) }
+    gender { Influencer::GENDERS[Faker::Demographic.sex] }
+    ethnicity { Faker::Demographic.race }
+    primary_language { Influencer.primary_languages.keys.sample }
+    kids_age_range { Influencer::KIDS_AGE_RANGES.sample }
+    pet_list { Influencer::PETS.sample }
+    worked_with_mediatrix false
+    alcohol_brand_friendly false
+    vlogger false
+    explicit_content false
+    brand_safe_content false
+    licensing_included false
+    fubr false
+    staff_pick false
   end
 end
