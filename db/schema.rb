@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170220160907) do
+ActiveRecord::Schema.define(version: 20170220161655) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -148,16 +148,25 @@ ActiveRecord::Schema.define(version: 20170220160907) do
 
   create_table "publishing_platforms", force: true do |t|
     t.string   "name"
-    t.integer  "influencer_id"
     t.integer  "subscriber_count"
     t.integer  "sponsorship_rate"
     t.text     "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "type"
+    t.string   "url"
+    t.integer  "monthly_posts"
+    t.integer  "monthly_page_views"
+    t.integer  "monthly_unique_visitor"
+    t.integer  "avg_views"
+    t.integer  "rate_dedicated"
+    t.integer  "rate_integrated"
+    t.integer  "followers_count"
+    t.string   "handle"
+    t.integer  "engage_rate"
+    t.integer  "avg_opens"
+    t.integer  "avg_screenshots"
   end
-
-  add_index "publishing_platforms", ["influencer_id"], name: "index_publishing_platforms_on_influencer_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
