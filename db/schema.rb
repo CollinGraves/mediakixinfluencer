@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170220162942) do
+ActiveRecord::Schema.define(version: 20170220163119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -147,14 +147,30 @@ ActiveRecord::Schema.define(version: 20170220162942) do
   add_index "platform_accounts", ["publishing_plaform_id"], name: "index_platform_accounts_on_publishing_plaform_id", using: :btree
 
   create_table "platform_campaigns", force: true do |t|
-    t.string   "name"
-    t.string   "contract_num"
     t.integer  "brand_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "campaign_id"
+    t.integer  "type"
+    t.integer  "clicks"
+    t.integer  "comments_count"
+    t.integer  "conversions"
+    t.integer  "facebook_shares"
+    t.integer  "twitter_shares"
+    t.integer  "pins_count"
+    t.datetime "date_live"
+    t.integer  "num_views"
+    t.integer  "likes"
+    t.integer  "shares"
+    t.integer  "num_posts"
+    t.integer  "engagement"
+    t.integer  "snaps"
+    t.integer  "opens"
+    t.integer  "retweets"
   end
 
   add_index "platform_campaigns", ["brand_id"], name: "index_platform_campaigns_on_brand_id", using: :btree
+  add_index "platform_campaigns", ["campaign_id"], name: "index_platform_campaigns_on_campaign_id", using: :btree
 
   create_table "publishing_platforms", force: true do |t|
     t.string   "name"
