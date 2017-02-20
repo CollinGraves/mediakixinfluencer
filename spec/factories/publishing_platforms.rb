@@ -26,10 +26,8 @@
 
 FactoryGirl.define do
   factory :publishing_platform do
-    name "MyString"
-    influencer nil
-    subscriber_count 1
-    sponsorship_rate 1
-    notes "MyText"
+    name { Faker::Name.name }
+    sponsorship_rate { Faker::Number.digit(1) }
+    notes { Faker::Lorem.sentence  }
   end
 end
