@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170220155942) do
+ActiveRecord::Schema.define(version: 20170220160618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -107,6 +107,22 @@ ActiveRecord::Schema.define(version: 20170220155942) do
     t.string   "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "worked_with_mediatrix"
+    t.integer  "age"
+    t.boolean  "gender"
+    t.integer  "ethnicity"
+    t.string   "primary_languages"
+    t.string   "kids_age_range"
+    t.string   "pets"
+    t.boolean  "alcohol_brand_friendly"
+    t.boolean  "vlogger"
+    t.boolean  "explicit_content"
+    t.boolean  "brand_safe_content"
+    t.string   "licensing_included_boolean"
+    t.text     "brand_exclusives"
+    t.boolean  "fubr"
+    t.text     "cpa_compensation_basics"
+    t.boolean  "staff_pick"
   end
 
   create_table "platform_campaigns", force: true do |t|
