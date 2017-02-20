@@ -25,5 +25,6 @@
 #
 
 class PublishingPlatform < ActiveRecord::Base
-  belongs_to :influencer
+  has_many :platform_accounts
+  has_many :influencers, through: :platform_accounts
 end
