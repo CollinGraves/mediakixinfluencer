@@ -11,6 +11,7 @@
 #  influencer_id     :integer
 #  created_at        :datetime
 #  updated_at        :datetime
+#  country           :string(255)
 #
 
 require 'rails_helper'
