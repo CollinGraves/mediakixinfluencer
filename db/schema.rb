@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170220160618) do
+ActiveRecord::Schema.define(version: 20170220160907) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -124,6 +124,17 @@ ActiveRecord::Schema.define(version: 20170220160618) do
     t.text     "cpa_compensation_basics"
     t.boolean  "staff_pick"
   end
+
+  create_table "platform_accounts", force: true do |t|
+    t.integer  "influencer_id"
+    t.integer  "publishing_plaform_id"
+    t.integer  "account_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "platform_accounts", ["influencer_id"], name: "index_platform_accounts_on_influencer_id", using: :btree
+  add_index "platform_accounts", ["publishing_plaform_id"], name: "index_platform_accounts_on_publishing_plaform_id", using: :btree
 
   create_table "platform_campaigns", force: true do |t|
     t.string   "name"

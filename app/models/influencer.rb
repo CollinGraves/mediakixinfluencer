@@ -29,5 +29,7 @@
 
 class Influencer < ActiveRecord::Base
   has_one :address
+  has_many :platform_accounts
+
   has_many :publishing_platforms
 end
