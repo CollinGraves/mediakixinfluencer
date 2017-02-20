@@ -12,7 +12,7 @@
 
 FactoryGirl.define do
   factory :platform_account do
-    influencer nil
-    publishing_plaform nil
+    influencer
+    publishing_plaform
   end
 end
