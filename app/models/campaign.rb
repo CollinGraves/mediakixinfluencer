@@ -12,4 +12,6 @@
 
 class Campaign < ActiveRecord::Base
   belongs_to :brand
+
+  has_many :platform_campaigns
 end

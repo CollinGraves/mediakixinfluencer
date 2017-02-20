@@ -37,6 +37,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'tzinfo-data'
 gem 'validates_formatting_of'
+gem 'country_select'
 
 group :production do
   gem 'rails_12factor'
@@ -46,15 +47,17 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 group :development do
   gem 'pry-rails'
   gem 'better_errors'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring',        group: :development
+  gem 'spring'
   gem 'annotate'
   gem 'binding_of_caller'
+  gem 'quiet_assets'
 end
 
 group :test do

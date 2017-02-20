@@ -1,6 +1,27 @@
 ActiveAdmin.register Influencer do
   active_admin_importable
-  permit_params :first_name, :last_name, :email, :phone
+  permit_params :first_name,
+                :last_name,
+                :email,
+                :phone,
+                :worked_with_mediatrix,
+                :age,
+                :gender,
+                :ethnicity,
+                :primary_languages,
+                :kids_age_range,
+                :pets,
+                :alcohol_brand_friendly,
+                :vlogger,
+                :explicit_content,
+                :brand_safe_content,
+                :licensing_included_boolean,
+                :brand_exclusives,
+                :fubr,
+                :cpa_compensation_basics,
+                :staff_pick
+
+
 
   # filter :associated_markets_id, collection: proc { Market.all }, as: :select
 

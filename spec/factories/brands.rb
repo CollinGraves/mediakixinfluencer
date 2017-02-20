@@ -11,7 +11,7 @@
 
 FactoryGirl.define do
   factory :brand do
-    name "MyString"
-    slug "MyString"
+    name { Faker::Company.name }
+    slug { Faker::Internet.slug }
   end
 end

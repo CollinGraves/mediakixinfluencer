@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170220172745) do
+ActiveRecord::Schema.define(version: 20170220230910) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -122,37 +122,37 @@ ActiveRecord::Schema.define(version: 20170220172745) do
     t.integer  "age"
     t.boolean  "gender"
     t.integer  "ethnicity"
-    t.string   "primary_languages"
-    t.string   "kids_age_range"
-    t.string   "pets"
+    t.string   "kids_age_range_list"
+    t.string   "pet_list"
     t.boolean  "alcohol_brand_friendly"
     t.boolean  "vlogger"
     t.boolean  "explicit_content"
     t.boolean  "brand_safe_content"
-    t.string   "licensing_included_boolean"
     t.text     "brand_exclusives"
     t.boolean  "fubr"
     t.text     "cpa_compensation_basics"
     t.boolean  "staff_pick"
+    t.boolean  "licensing_included"
+    t.integer  "primary_language"
   end
 
   create_table "platform_accounts", force: true do |t|
     t.integer  "influencer_id"
-    t.integer  "publishing_plaform_id"
+    t.integer  "publishing_platform_id"
     t.integer  "account_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "platform_accounts", ["influencer_id"], name: "index_platform_accounts_on_influencer_id", using: :btree
-  add_index "platform_accounts", ["publishing_plaform_id"], name: "index_platform_accounts_on_publishing_plaform_id", using: :btree
+  add_index "platform_accounts", ["publishing_platform_id"], name: "index_platform_accounts_on_publishing_platform_id", using: :btree
 
   create_table "platform_campaigns", force: true do |t|
     t.integer  "brand_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "campaign_id"
-    t.integer  "type"
+    t.string   "type"
     t.integer  "clicks"
     t.integer  "comments_count"
     t.integer  "conversions"

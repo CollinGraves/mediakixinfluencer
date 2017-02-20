@@ -7,7 +7,7 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  campaign_id            :integer
-#  type                   :integer
+#  type                   :string(255)
 #  clicks                 :integer
 #  comments_count         :integer
 #  conversions            :integer
@@ -28,8 +28,7 @@
 
 FactoryGirl.define do
   factory :platform_campaign do
-    name "MyString"
-    contract_num "MyString"
-    brand nil
+    campaign
+    publishing_platform
   end
 end
