@@ -1,2 +1,0 @@
-class SnapchatPublishingPlatform < PublishingPlatform
-end

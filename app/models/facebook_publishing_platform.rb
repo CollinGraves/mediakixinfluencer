@@ -1,2 +1,0 @@
-class FacebookPublishingPlatform < PublishingPlatform
-end

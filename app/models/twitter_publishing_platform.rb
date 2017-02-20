@@ -1,2 +1,0 @@
-class TwitterPublishingPlatform < PublishingPlatform
-end

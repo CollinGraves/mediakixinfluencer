@@ -1,2 +1,0 @@
-class BlogPublishingPlatform < PublishingPlatform
-end

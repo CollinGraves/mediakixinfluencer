@@ -24,8 +24,5 @@
 #  avg_screenshots        :integer
 #
 
-require 'rails_helper'
-
-RSpec.describe PublishingPlatform, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+class YoutubePublishingPlatform < PublishingPlatform
 end

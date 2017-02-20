@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170209142325) do
+ActiveRecord::Schema.define(version: 20170220172745) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20170209142325) do
     t.integer  "influencer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "country"
   end
 
   add_index "addresses", ["influencer_id"], name: "index_addresses_on_influencer_id", using: :btree
@@ -77,10 +78,21 @@ ActiveRecord::Schema.define(version: 20170209142325) do
   add_index "brands_categories", ["brand_id"], name: "index_brands_categories_on_brand_id", using: :btree
   add_index "brands_categories", ["category_id"], name: "index_brands_categories_on_category_id", using: :btree
 
+  create_table "campaigns", force: true do |t|
+    t.integer  "brand_id"
+    t.string   "contract_num"
+    t.string   "campaign_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "campaigns", ["brand_id"], name: "index_campaigns_on_brand_id", using: :btree
+
   create_table "categories", force: true do |t|
     t.string   "label"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "parent_id"
   end
 
   create_table "delayed_jobs", force: true do |t|
@@ -106,30 +118,84 @@ ActiveRecord::Schema.define(version: 20170209142325) do
     t.string   "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "worked_with_mediatrix"
+    t.integer  "age"
+    t.boolean  "gender"
+    t.integer  "ethnicity"
+    t.string   "primary_languages"
+    t.string   "kids_age_range"
+    t.string   "pets"
+    t.boolean  "alcohol_brand_friendly"
+    t.boolean  "vlogger"
+    t.boolean  "explicit_content"
+    t.boolean  "brand_safe_content"
+    t.string   "licensing_included_boolean"
+    t.text     "brand_exclusives"
+    t.boolean  "fubr"
+    t.text     "cpa_compensation_basics"
+    t.boolean  "staff_pick"
   end
 
-  create_table "platform_campaigns", force: true do |t|
-    t.string   "name"
-    t.string   "contract_num"
-    t.integer  "brand_id"
+  create_table "platform_accounts", force: true do |t|
+    t.integer  "influencer_id"
+    t.integer  "publishing_plaform_id"
+    t.integer  "account_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "platform_accounts", ["influencer_id"], name: "index_platform_accounts_on_influencer_id", using: :btree
+  add_index "platform_accounts", ["publishing_plaform_id"], name: "index_platform_accounts_on_publishing_plaform_id", using: :btree
+
+  create_table "platform_campaigns", force: true do |t|
+    t.integer  "brand_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "campaign_id"
+    t.integer  "type"
+    t.integer  "clicks"
+    t.integer  "comments_count"
+    t.integer  "conversions"
+    t.integer  "facebook_shares"
+    t.integer  "twitter_shares"
+    t.integer  "pins_count"
+    t.datetime "date_live"
+    t.integer  "num_views"
+    t.integer  "likes"
+    t.integer  "shares"
+    t.integer  "num_posts"
+    t.integer  "engagement"
+    t.integer  "snaps"
+    t.integer  "opens"
+    t.integer  "retweets"
+    t.integer  "publishing_platform_id"
+  end
+
   add_index "platform_campaigns", ["brand_id"], name: "index_platform_campaigns_on_brand_id", using: :btree
+  add_index "platform_campaigns", ["campaign_id"], name: "index_platform_campaigns_on_campaign_id", using: :btree
+  add_index "platform_campaigns", ["publishing_platform_id"], name: "index_platform_campaigns_on_publishing_platform_id", using: :btree
 
   create_table "publishing_platforms", force: true do |t|
     t.string   "name"
-    t.integer  "influencer_id"
     t.integer  "subscriber_count"
     t.integer  "sponsorship_rate"
     t.text     "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "type"
+    t.string   "url"
+    t.integer  "monthly_posts"
+    t.integer  "monthly_page_views"
+    t.integer  "monthly_unique_visitor"
+    t.integer  "avg_views"
+    t.integer  "rate_dedicated"
+    t.integer  "rate_integrated"
+    t.integer  "followers_count"
+    t.string   "handle"
+    t.integer  "engage_rate"
+    t.integer  "avg_opens"
+    t.integer  "avg_screenshots"
   end
-
-  add_index "publishing_platforms", ["influencer_id"], name: "index_publishing_platforms_on_influencer_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

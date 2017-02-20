@@ -1,2 +1,0 @@
-class YoutubePublishingPlatform < PublishingPlatform
-end

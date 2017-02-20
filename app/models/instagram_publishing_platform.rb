@@ -1,2 +1,0 @@
-class InstagramPublishingPlatform < PublishingPlatform
-end
