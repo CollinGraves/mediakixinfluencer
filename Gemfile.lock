@@ -100,6 +100,14 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.11.1)
+    countries (2.0.7)
+      i18n_data (~> 0.7.0)
+      money (~> 6.7)
+      sixarm_ruby_unaccent (~> 1.1)
+      unicode_utils (~> 1.4)
+    country_select (3.0.0)
+      countries (~> 2.0)
+      sort_alphabetical (~> 1.0)
     cucumber (2.4.0)
       builder (>= 2.1.2)
       cucumber-core (~> 1.5.0)
@@ -148,6 +156,7 @@ GEM
     hashie (3.4.6)
     hike (1.2.3)
     i18n (0.7.0)
+    i18n_data (0.7.0)
     inherited_resources (1.6.0)
       actionpack (>= 3.2, < 5)
       has_scope (~> 0.6.0.rc)
@@ -173,6 +182,9 @@ GEM
     mime-types (1.25.1)
     mini_portile2 (2.1.0)
     minitest (5.10.1)
+    money (6.8.1)
+      i18n (>= 0.6.4, <= 0.7.0)
+      sixarm_ruby_unaccent (>= 1.1.1, < 2)
     multi_json (1.12.1)
     multi_test (0.1.2)
     multi_xml (0.6.0)
@@ -271,7 +283,10 @@ GEM
     simple_form (3.3.1)
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
+    sixarm_ruby_unaccent (1.1.1)
     slop (3.6.0)
+    sort_alphabetical (1.1.0)
+      unicode_utils (>= 1.2.2)
     spring (1.7.2)
     sprockets (2.12.4)
       hike (~> 1.2)
@@ -297,6 +312,7 @@ GEM
       tzinfo (>= 1.0.0)
     uglifier (3.0.4)
       execjs (>= 0.3.0, < 3)
+    unicode_utils (1.4.0)
     validates_formatting_of (0.9.0)
       activemodel
     warden (1.2.6)
@@ -318,6 +334,7 @@ DEPENDENCIES
   bootstrap-sass-extras
   bundler
   coffee-rails (~> 4.0.0)
+  country_select
   cucumber-rails
   database_cleaner
   delayed_job_active_record
