@@ -7,7 +7,7 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  campaign_id            :integer
-#  type                   :integer
+#  type                   :string(255)
 #  clicks                 :integer
 #  comments_count         :integer
 #  conversions            :integer

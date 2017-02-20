@@ -27,7 +27,7 @@
 FactoryGirl.define do
   factory :publishing_platform do
     name { Faker::Name.name }
-    sponsorship_rate { Faker::Number.digit(1) }
+    sponsorship_rate { Faker::Number.digit }
     notes { Faker::Lorem.sentence  }
   end
 end

@@ -14,6 +14,6 @@ FactoryGirl.define do
   factory :campaign do
     brand
     contract_num { Faker::Number.number(5) }
-    name { Faker::Company.catch_phrase }
+    campaign_name { Faker::Company.catch_phrase }
   end
 end

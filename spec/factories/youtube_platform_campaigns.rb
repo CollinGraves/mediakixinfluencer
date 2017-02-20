@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :youtube_platform_campaign do
     campaign
-    youtube_publishing_platform
+    publishing_platform { youtube_publishing_platform }
 
     clicks { Faker::Number.between(0,1000) }
     comments_count { Faker::Number.between(0,1000) }

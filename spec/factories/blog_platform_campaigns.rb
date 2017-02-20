@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :blog_platform_campaign do
     campaign
-    blog_publishing_platform
+    publishing_platform { blog_publishing_platform }
 
     clicks { Faker::Number.between(0,1000) }
     comments_count { Faker::Number.between(0,1000) }
