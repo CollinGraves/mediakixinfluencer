@@ -6,6 +6,7 @@
 #  label      :string(255)
 #  created_at :datetime
 #  updated_at :datetime
+#  parent_id  :integer
 #
 
 require 'rails_helper'
