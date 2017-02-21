@@ -40,4 +40,9 @@ ActiveAdmin.register Influencer do
   filter :brand_exclusives
   filter :cpa_compensation_basics
 
+  filter :address_country, as: :string
+  filter :address_city, as: :string
+  filter :address_state, as: :string
+  filter :address_zipcode, as: :string
+
 end
