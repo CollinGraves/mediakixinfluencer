@@ -63,5 +63,8 @@ class Influencer < ActiveRecord::Base
   has_many :platform_accounts, dependent: :destroy
   has_many :publishing_platforms, through: :platform_accounts
 
+  # Associations to work with admin filters
   has_many :platform_campaigns, through: :publishing_platforms
+  has_many :campaigns, through: :platform_campaigns
+  has_many :brands, through: :campaigns
 end

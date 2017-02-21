@@ -77,4 +77,10 @@ ActiveAdmin.register Influencer do
   filter :platform_campaigns_opens, as: :numeric
   filter :platform_campaigns_retweets, as: :numeric
 
+  filter :campaigns_campaign_name, as: :string
+  filter :campaigns_contract_num, as: :string
+
+  filter :brands_name, as: :string
+  filter :brands_slug, as: :string
+
 end
