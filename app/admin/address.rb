@@ -16,7 +16,7 @@ ActiveAdmin.register Address do
   index do
     column :id
     column :influencer do |address|
-      link_to address.influencer.name, admin_influencer_path(address.influencer)
+      link_to address.influencer.decorate.name, admin_influencer_path(address.influencer)
     end
     column :country
     column :state

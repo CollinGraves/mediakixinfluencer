@@ -1,5 +1,8 @@
 ActiveAdmin.register Influencer do
   active_admin_importable
+
+  decorate_with InfluencerDecorator
+
   permit_params :first_name,
                 :last_name,
                 :email,
@@ -88,6 +91,61 @@ ActiveAdmin.register Influencer do
   filter :brands_name, as: :string
   filter :brands_slug, as: :string
 
+  index do
+    selectable_column
+    column :id do |influencer|
+      link_to influencer.id, admin_influencer_path(influencer)
+    end
+    column :name
+    column :email
+    column :country
+    column :publishing_platforms
+
+    actions
+  end
+
+  show do
+    attributes_table do
+      row :id
+      row :name
+      row :email
+      row :phone
+      row :age
+      row :gender
+      row :primary_language
+      row :ethnicity
+      row :kids_age_range_list
+      row :pet_lists
+    end
+
+    panel "Other Information" do
+      attributes_table_for influencer do
+        row :staff_pick
+        row :worked_with_mediatrix
+        row :alcohol_brand_friendly
+        row :vlogger
+        row :explicit_content
+        row :brand_safe_content
+        row "Frequent Used Blogger List" do |i|
+          status_tag i.fubr
+        end
+        row :licensing_included
+        row :brand_exclusives
+        row :cpa_compensation_basics
+      end
+    end
+
+    panel "Address Details" do
+      attributes_table_for influencer.address do
+        row :country
+        row :state
+        row :city
+        row :primary_address
+        row :secondary_address
+      end
+    end
+  end
+
   form do |f|
     f.semantic_errors *f.object.errors.keys
 
@@ -127,6 +185,12 @@ ActiveAdmin.register Influencer do
     end
 
     f.actions
+  end
+
+  controller do
+    def scoped_collection
+      super.includes(:address, :publishing_platforms)
+    end
   end
 
 end
