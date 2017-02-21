@@ -25,6 +25,16 @@
 #
 
 class PublishingPlatform < ActiveRecord::Base
+
+  PLATFORMS = %w(
+    blog
+    facebook
+    youtube
+    instagram
+    snapchat
+    twitter
+  )
+
   has_many :platform_accounts
   has_many :influencers, through: :platform_accounts
   has_many :platform_campaigns
