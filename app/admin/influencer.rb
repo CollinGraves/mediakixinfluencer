@@ -35,7 +35,7 @@ ActiveAdmin.register Influencer do
   filter :explicit_content, as: :boolean
   filter :brand_safe_content, as: :boolean
   filter :licensing_included, as: :boolean
-  filter :fubr, as: :boolean
+  filter :fubr, as: :boolean, label: "Frequent Used Blogger List"
   filter :staff_pick, as: :boolean
   filter :brand_exclusives, as: :string
   filter :cpa_compensation_basics
@@ -86,5 +86,36 @@ ActiveAdmin.register Influencer do
   filter :brands_id, as: :numeric, label: "Brand ID"
   filter :brands_name, as: :string
   filter :brands_slug, as: :string
+
+  form do |f|
+
+    f.inputs "Personal Information" do
+      f.input :first_name
+      f.input :last_name
+      f.input :email
+      f.input :phone
+      f.input :age
+      f.input :gender, as: :select, collection: Influencer::GENDERS
+      f.input :primary_language
+      f.input :ethnicity
+    end
+
+    f.inputs "Other Details" do
+      f.input :kids_age_range_list, as: :select, collection: Influencer::KIDS_AGE_RANGES
+      f.input :pet_list, as: :select, collection: Influencer::PETS
+      f.input :staff_pick
+      f.input :worked_with_mediatrix
+      f.input :alcohol_brand_friendly
+      f.input :vlogger
+      f.input :explicit_content
+      f.input :brand_safe_content
+      f.input :fubr, label: "Frequent Used Blogger List"
+      f.input :licensing_included
+      f.input :brand_exclusives
+      f.input :cpa_compensation_basics
+    end
+
+    f.actions
+  end
 
 end
