@@ -9,8 +9,8 @@ ActiveAdmin.register Influencer do
                 :gender,
                 :ethnicity,
                 :primary_language,
-                :kids_age_range,
-                :pets,
+                :kids_age_range_list,
+                :pet_list,
                 :alcohol_brand_friendly,
                 :vlogger,
                 :explicit_content,
@@ -19,7 +19,8 @@ ActiveAdmin.register Influencer do
                 :brand_exclusives,
                 :fubr,
                 :cpa_compensation_basics,
-                :staff_pick
+                :staff_pick,
+                address_attributes: [:country, :state, :city, :zipcode, :primary_address, :secondary_address]
 
 
   filter :first_name_or_last_name, as: :string, label: "Name"
@@ -88,6 +89,7 @@ ActiveAdmin.register Influencer do
   filter :brands_slug, as: :string
 
   form do |f|
+    f.semantic_errors *f.object.errors.keys
 
     f.inputs "Personal Information" do
       f.input :first_name
@@ -98,6 +100,15 @@ ActiveAdmin.register Influencer do
       f.input :gender, as: :select, collection: Influencer::GENDERS
       f.input :primary_language
       f.input :ethnicity
+    end
+
+    f.inputs "Address Details", for: [:address, f.object.address || Address.new ] do |a|
+      a.input :country, as: :select, collection: ISO3166::Country.translations.invert
+      a.input :state
+      a.input :city
+      a.input :zipcode
+      a.input :primary_address
+      a.input :secondary_address
     end
 
     f.inputs "Other Details" do

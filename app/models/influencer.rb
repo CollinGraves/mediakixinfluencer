@@ -68,6 +68,8 @@ class Influencer < ActiveRecord::Base
   has_many :campaigns, through: :platform_campaigns
   has_many :brands, through: :campaigns
 
+  accepts_nested_attributes_for :address
+
   def name
     [first_name, last_name].join(' ')
   end
