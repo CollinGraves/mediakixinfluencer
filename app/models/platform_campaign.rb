@@ -27,6 +27,16 @@
 #
 
 class PlatformCampaign < ActiveRecord::Base
+
+  PLATFORMS = %w(
+    blog
+    facebook
+    youtube
+    instagram
+    snapchat
+    twitter
+  )
+
   belongs_to :campaign
   belongs_to :brand
   belongs_to :publishing_platform

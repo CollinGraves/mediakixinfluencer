@@ -62,4 +62,6 @@ class Influencer < ActiveRecord::Base
 
   has_many :platform_accounts, dependent: :destroy
   has_many :publishing_platforms, through: :platform_accounts
+
+  has_many :platform_campaigns, through: :publishing_platforms
 end

@@ -22,10 +22,10 @@ ActiveAdmin.register Influencer do
                 :staff_pick
 
 
-  filter :first_name_or_last_name, as: :string
+  filter :first_name_or_last_name, as: :string, label: "Name"
   filter :email, as: :string
   filter :phone, as: :string
-  filter :age
+  filter :age, as: :numeric
   filter :primary_language, as: :select, collection: Influencer.primary_languages
   filter :ethnicity, as: :select, collection: Influencer.ethnicities
   filter :gender, as: :select, collection: Influencer::GENDERS
@@ -37,7 +37,7 @@ ActiveAdmin.register Influencer do
   filter :licensing_included, as: :boolean
   filter :fubr, as: :boolean
   filter :staff_pick, as: :boolean
-  filter :brand_exclusives
+  filter :brand_exclusives, as: :string
   filter :cpa_compensation_basics
 
   filter :address_country, as: :string
@@ -46,6 +46,8 @@ ActiveAdmin.register Influencer do
   filter :address_zipcode, as: :string
 
   filter :publishing_platforms_type, as: :select, collection: PublishingPlatform::PLATFORMS.map {|platform| [platform.titleize, "#{platform.titleize}PublishingPlatform"] }
+  filter :publishing_platforms_url, as: :string
+  filter :publishing_platforms_handle, as: :string
   filter :publishing_platforms_subscriber_count, as: :numeric
   filter :publishing_platforms_sponsorship_rate, as: :numeric
   filter :publishing_platforms_monthly_posts, as: :numeric
@@ -57,5 +59,22 @@ ActiveAdmin.register Influencer do
   filter :publishing_platforms_engage_rate, as: :numeric
   filter :publishing_platforms_avg_opens, as: :numeric
   filter :publishing_platforms_avg_screenshots, as: :numeric
+
+  filter :platform_campaigns_type, as: :select, collection: PlatformCampaign::PLATFORMS.map {|platform| [platform.titleize, "#{platform.titleize}PlatformCampaign"] }
+  filter :platform_campaigns_date_live, as: :date_range
+  filter :platform_campaigns_clicks, as: :numeric
+  filter :platform_campaigns_comments_count, as: :numeric
+  filter :platform_campaigns_conversions, as: :numeric
+  filter :platform_campaigns_facebook_shares, as: :numeric
+  filter :platform_campaigns_twitter_shares, as: :numeric
+  filter :platform_campaigns_pins_count, as: :numeric
+  filter :platform_campaigns_num_views, as: :numeric
+  filter :platform_campaigns_likes, as: :numeric
+  filter :platform_campaigns_shares, as: :numeric
+  filter :platform_campaigns_num_posts, as: :numeric
+  filter :platform_campaigns_engagement, as: :numeric
+  filter :platform_campaigns_snaps, as: :numeric
+  filter :platform_campaigns_opens, as: :numeric
+  filter :platform_campaigns_retweets, as: :numeric
 
 end
