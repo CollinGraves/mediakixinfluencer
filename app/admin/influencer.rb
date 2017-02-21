@@ -46,5 +46,16 @@ ActiveAdmin.register Influencer do
   filter :address_zipcode, as: :string
 
   filter :publishing_platforms_type, as: :select, collection: PublishingPlatform::PLATFORMS.map {|platform| [platform.titleize, "#{platform.titleize}PublishingPlatform"] }
+  filter :publishing_platforms_subscriber_count, as: :numeric
+  filter :publishing_platforms_sponsorship_rate, as: :numeric
+  filter :publishing_platforms_monthly_posts, as: :numeric
+  filter :publishing_platforms_monthly_page_views, as: :numeric
+  filter :publishing_platforms_avg_views, as: :numeric
+  filter :publishing_platforms_rate_dedicated, as: :numeric
+  filter :publishing_platforms_rate_integrated, as: :numeric
+  filter :publishing_platforms_followers_count, as: :numeric
+  filter :publishing_platforms_engage_rate, as: :numeric
+  filter :publishing_platforms_avg_opens, as: :numeric
+  filter :publishing_platforms_avg_screenshots, as: :numeric
 
 end
