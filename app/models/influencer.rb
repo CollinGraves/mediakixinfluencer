@@ -50,6 +50,14 @@ class Influencer < ActiveRecord::Base
     german: 9
   }
 
+  enum ethnicity: {
+    white: 1,
+    black: 2,
+    asian: 3,
+    hispanic: 4,
+    other: 5
+  }
+
   has_one :address, dependent: :destroy
 
   has_many :platform_accounts, dependent: :destroy

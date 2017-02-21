@@ -8,35 +8,36 @@ ActiveAdmin.register Influencer do
                 :age,
                 :gender,
                 :ethnicity,
-                :primary_languages,
+                :primary_language,
                 :kids_age_range,
                 :pets,
                 :alcohol_brand_friendly,
                 :vlogger,
                 :explicit_content,
                 :brand_safe_content,
-                :licensing_included_boolean,
+                :licensing_included,
                 :brand_exclusives,
                 :fubr,
                 :cpa_compensation_basics,
                 :staff_pick
 
 
-
-  # filter :associated_markets_id, collection: proc { Market.all }, as: :select
-
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-# permit_params :list, :of, :attributes, :on, :model
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if params[:action] == 'create' && current_user.admin?
-#   permitted
-# end
-
+  filter :first_name_or_last_name, as: :string
+  filter :email, as: :string
+  filter :phone, as: :string
+  filter :age
+  filter :primary_language, as: :select, collection: Influencer.primary_languages
+  filter :ethnicity, as: :select, collection: Influencer.ethnicities
+  filter :gender, as: :select, collection: Influencer::GENDERS
+  filter :worked_with_mediatrix, as: :boolean
+  filter :alcohol_brand_friendly, as: :boolean
+  filter :vlogger, as: :boolean
+  filter :explicit_content, as: :boolean
+  filter :brand_safe_content, as: :boolean
+  filter :licensing_included, as: :boolean
+  filter :fubr, as: :boolean
+  filter :staff_pick, as: :boolean
+  filter :brand_exclusives
+  filter :cpa_compensation_basics
 
 end
