@@ -37,7 +37,12 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'tzinfo-data'
 gem 'validates_formatting_of'
+
+# Exposes countries in active admin
 gem 'country_select'
+
+# Decorators - handle presentation logic
+gem 'draper'
 
 group :production do
   gem 'rails_12factor'
