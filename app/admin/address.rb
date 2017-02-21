@@ -5,4 +5,11 @@ ActiveAdmin.register Address do
                 :state,
                 :zipcode,
                 :country
+
+  filter :influencer_id, as: :numeric, label: "Influencer ID"
+  filter :country
+  filter :state
+  filter :city
+  filter :zip_code
+  filter :primary_address_or_secondary_address, as: :string, label: "Address"
 end
