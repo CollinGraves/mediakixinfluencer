@@ -45,4 +45,6 @@ ActiveAdmin.register Influencer do
   filter :address_state, as: :string
   filter :address_zipcode, as: :string
 
+  filter :publishing_platforms_type, as: :string
+
 end
