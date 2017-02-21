@@ -67,4 +67,8 @@ class Influencer < ActiveRecord::Base
   has_many :platform_campaigns, through: :publishing_platforms
   has_many :campaigns, through: :platform_campaigns
   has_many :brands, through: :campaigns
+
+  def name
+    [first_name, last_name].join(' ')
+  end
 end
