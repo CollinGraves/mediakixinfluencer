@@ -46,6 +46,7 @@ ActiveAdmin.register Influencer do
   filter :address_zipcode, as: :string
 
   filter :publishing_platforms_type, as: :select, collection: PublishingPlatform::PLATFORMS.map {|platform| [platform.titleize, "#{platform.titleize}PublishingPlatform"] }
+  filter :publishing_platforms_id, as: :numeric, label: "Publishing Platform ID"
   filter :publishing_platforms_url, as: :string
   filter :publishing_platforms_handle, as: :string
   filter :publishing_platforms_subscriber_count, as: :numeric
@@ -61,6 +62,7 @@ ActiveAdmin.register Influencer do
   filter :publishing_platforms_avg_screenshots, as: :numeric
 
   filter :platform_campaigns_type, as: :select, collection: PlatformCampaign::PLATFORMS.map {|platform| [platform.titleize, "#{platform.titleize}PlatformCampaign"] }
+  filter :platform_campaigns_id, as: :numeric, label: "Platform Campaign ID"
   filter :platform_campaigns_date_live, as: :date_range
   filter :platform_campaigns_clicks, as: :numeric
   filter :platform_campaigns_comments_count, as: :numeric
@@ -77,9 +79,11 @@ ActiveAdmin.register Influencer do
   filter :platform_campaigns_opens, as: :numeric
   filter :platform_campaigns_retweets, as: :numeric
 
+  filter :campaigns_id, as: :numeric, label: "Campaign ID"
   filter :campaigns_campaign_name, as: :string
   filter :campaigns_contract_num, as: :string
 
+  filter :brands_id, as: :numeric, label: "Brand ID"
   filter :brands_name, as: :string
   filter :brands_slug, as: :string
 
