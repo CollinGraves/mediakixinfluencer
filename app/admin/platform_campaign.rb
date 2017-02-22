@@ -103,6 +103,32 @@ ActiveAdmin.register PlatformCampaign do
     end
   end
 
+  form do |f|
+    f.semantic_errors *f.object.errors.keys
+
+    f.inputs "Information" do
+      if f.object.new_record?
+        f.input :type, as: :select, collection: PlatformCampaign::PLATFORMS.map {|type| "#{type.titleize}PlatformCampaign" }
+      else
+        f.input :id, input_html: { disabled: true }
+        f.input :platform, input_html: { disabled: true }
+      end
+    end
+
+    f.inputs "Associations" do
+      f.input :campaign
+      f.input :publishing_platform
+    end
+
+    f.inputs "Stats" do
+      platform_campaign.class.stats_fields.each do |field|
+        f.input field
+      end
+    end
+
+    f.actions
+  end
+
   controller do
     def scoped_collection
       super.includes(:brand, :publishing_platform)
