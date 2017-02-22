@@ -3,6 +3,10 @@ ActiveAdmin.register PlatformAccount do
     :publishing_platform_id,
     :account_type
 
+  filter :influencer_id, as: :numeric, label: "Influencer ID"
+  filter :publishing_platform_id, as: :numeric, label: "Publishing Platform ID"
+  filter :account_type, as: :select, collection: PlatformAccount.account_types
+
   index do
     selectable_column
 
