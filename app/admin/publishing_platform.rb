@@ -81,6 +81,36 @@ ActiveAdmin.register PublishingPlatform do
         end
       end
     end
+
+    panel "Associations" do
+      attributes_table_for publishing_platform.influencers do
+        row "Influencer" do |i|
+          link_to i.decorate.name, admin_influencer_path(i)
+        end
+      end
+    end
+  end
+
+  form do |f|
+    f.semantic_errors *f.object.errors.keys
+
+    f.inputs "Information" do
+      f.input :id, input_html: { disabled: true }
+      f.input :platform, input_html: { disabled: true }
+      f.input :sponsorship_rate
+      publishing_platform.class.information_fields.each do |field|
+        f.input field
+      end
+      f.input :notes
+    end
+
+    f.inputs "Stats" do
+      publishing_platform.class.stats_fields.each do |field|
+        f.input field
+      end
+    end
+
+    f.actions
   end
 
 end
