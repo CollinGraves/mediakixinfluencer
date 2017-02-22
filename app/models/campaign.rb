@@ -16,4 +16,6 @@ class Campaign < ActiveRecord::Base
   has_many :platform_campaigns, dependent: :nullify
 
   validates :campaign_name, presence: true
+
+  delegate :name, to: :brand, prefix: true, allow_nil: true
 end

@@ -32,4 +32,12 @@ class FacebookPlatformCampaign < PlatformCampaign
     'facebook'
   end
 
+  def self.stats_fields
+    %w(
+      comments_count
+      likes
+      shares
+    )
+  end
+
 end
