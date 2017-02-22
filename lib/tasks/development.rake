@@ -40,6 +40,7 @@ namespace :dev do
     publishing_platforms.each do |publishing_platform|
       index = publishing_platforms_types.find_index {|pp| pp.to_s == publishing_platform.type.underscore }
       next unless index
+      next unless platform_campaign_types[index]
       FactoryGirl.create(
         platform_campaign_types[index],
         publishing_platform: publishing_platform
