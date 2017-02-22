@@ -33,6 +33,7 @@ class PublishingPlatform < ActiveRecord::Base
     instagram
     snapchat
     twitter
+    pinterest
   )
 
   has_many :platform_accounts
