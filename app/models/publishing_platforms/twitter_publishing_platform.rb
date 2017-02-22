@@ -29,4 +29,12 @@ class TwitterPublishingPlatform < PublishingPlatform
     'twitter'
   end
 
+  def self.information_fields
+    []
+  end
+
+  def self.stats_fields
+    %w( followers_count )
+  end
+
 end

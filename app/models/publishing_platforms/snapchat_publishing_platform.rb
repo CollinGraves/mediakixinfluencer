@@ -29,4 +29,15 @@ class SnapchatPublishingPlatform < PublishingPlatform
     'snapchat'
   end
 
+  def self.information_fields
+    []
+  end
+
+  def self.stats_fields
+    %w(
+      avg_opens
+      avg_screenshots
+    )
+  end
+
 end

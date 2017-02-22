@@ -64,6 +64,23 @@ ActiveAdmin.register PublishingPlatform do
   end
 
   show do
+    attributes_table do
+      row :id
+      row :platform
+      row :sponsorship_rate
+      publishing_platform.class.information_fields.each do |field|
+        row field
+      end
+      row :notes
+    end
 
+    panel "Stats" do
+      attributes_table_for publishing_platform do
+        publishing_platform.class.stats_fields.each do |field|
+          row field
+        end
+      end
+    end
   end
+
 end

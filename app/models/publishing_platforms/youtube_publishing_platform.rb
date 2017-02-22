@@ -29,4 +29,17 @@ class YoutubePublishingPlatform < PublishingPlatform
     'youtube'
   end
 
+  def self.information_fields
+    %w(url)
+  end
+
+  def self.stats_fields
+    %w(
+      subscriber_count
+      avg_views
+      rate_dedicated
+      rate_integrated
+    )
+  end
+
 end

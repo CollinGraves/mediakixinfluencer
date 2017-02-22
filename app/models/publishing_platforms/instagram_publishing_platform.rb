@@ -29,4 +29,15 @@ class InstagramPublishingPlatform < PublishingPlatform
     'instagram'
   end
 
+  def self.information_fields
+    %w(handle)
+  end
+
+  def self.stats_fields
+    %w(
+      followers_count
+      engage_rate
+    )
+  end
+
 end

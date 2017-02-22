@@ -29,4 +29,16 @@ class BlogPublishingPlatform < PublishingPlatform
     'blog'
   end
 
+  def self.information_fields
+    %w(url)
+  end
+
+  def self.stats_fields
+    %w(
+      monthly_posts
+      monthly_page_views
+      monthly_unique_visitor
+    )
+  end
+
 end
