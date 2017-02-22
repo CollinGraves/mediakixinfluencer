@@ -41,7 +41,12 @@ class PlatformCampaign < ActiveRecord::Base
   belongs_to :brand
   belongs_to :publishing_platform
 
+  delegate :campaign_name, to: :campaign, allow_nil: true
+
   before_save :set_brand
+
+  def platform
+  end
 
   private
 
