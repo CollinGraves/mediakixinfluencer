@@ -3,7 +3,6 @@
 # Table name: publishing_platforms
 #
 #  id                     :integer          not null, primary key
-#  name                   :string(255)
 #  subscriber_count       :integer
 #  sponsorship_rate       :integer
 #  notes                  :text
@@ -26,7 +25,6 @@
 
 FactoryGirl.define do
   factory :publishing_platform do
-    name { Faker::Name.name }
     sponsorship_rate { Faker::Number.digit }
     notes { Faker::Lorem.sentence  }
   end

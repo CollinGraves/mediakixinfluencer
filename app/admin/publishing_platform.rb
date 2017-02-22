@@ -62,4 +62,8 @@ ActiveAdmin.register PublishingPlatform do
     column :engage_rate
     actions
   end
+
+  show do
+
+  end
 end

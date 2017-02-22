@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170220230910) do
+ActiveRecord::Schema.define(version: 20170222042243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -176,7 +176,6 @@ ActiveRecord::Schema.define(version: 20170220230910) do
   add_index "platform_campaigns", ["publishing_platform_id"], name: "index_platform_campaigns_on_publishing_platform_id", using: :btree
 
   create_table "publishing_platforms", force: true do |t|
-    t.string   "name"
     t.integer  "subscriber_count"
     t.integer  "sponsorship_rate"
     t.text     "notes"
