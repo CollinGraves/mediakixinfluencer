@@ -3,7 +3,6 @@
 # Table name: publishing_platforms
 #
 #  id                     :integer          not null, primary key
-#  name                   :string(255)
 #  subscriber_count       :integer
 #  sponsorship_rate       :integer
 #  notes                  :text
@@ -25,4 +24,21 @@
 #
 
 class BlogPublishingPlatform < PublishingPlatform
+
+  def platform
+    'blog'
+  end
+
+  def self.information_fields
+    %w(url)
+  end
+
+  def self.stats_fields
+    %w(
+      monthly_posts
+      monthly_page_views
+      monthly_unique_visitor
+    )
+  end
+
 end

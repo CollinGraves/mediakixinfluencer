@@ -27,4 +27,9 @@
 #
 
 class InstagramPlatformCampaign < PlatformCampaign
+
+  def platform
+    'instagram'
+  end
+
 end

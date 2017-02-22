@@ -27,4 +27,9 @@
 #
 
 class BlogPlatformCampaign < PlatformCampaign
+
+  def platform
+    'blog'
+  end
+
 end

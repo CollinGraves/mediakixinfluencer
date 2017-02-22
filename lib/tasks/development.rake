@@ -10,7 +10,8 @@ namespace :dev do
       :facebook_publishing_platform,
       :instagram_publishing_platform,
       :snapchat_publishing_platform,
-      :twitter_publishing_platform
+      :twitter_publishing_platform,
+      :pinterest_publishing_platform
     ]
 
     platform_campaign_types = [
@@ -38,6 +39,7 @@ namespace :dev do
 
     publishing_platforms.each do |publishing_platform|
       index = publishing_platforms_types.find_index {|pp| pp.to_s == publishing_platform.type.underscore }
+      next unless index
       FactoryGirl.create(
         platform_campaign_types[index],
         publishing_platform: publishing_platform

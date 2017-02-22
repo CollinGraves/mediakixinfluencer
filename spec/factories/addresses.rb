@@ -16,13 +16,11 @@
 
 FactoryGirl.define do
   factory :address do
-    influencer
-
     primary_address { Faker::Address.street_address }
     secondary_address { Faker::Address.secondary_address }
     city { Faker::Address.city }
     state { Faker::Address.state }
     zipcode { Faker::Address.zip_code }
-    country { Faker::Address.country }
+    country { Faker::Address.country_code }
   end
 end

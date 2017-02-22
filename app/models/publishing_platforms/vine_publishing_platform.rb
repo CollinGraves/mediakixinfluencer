@@ -3,7 +3,6 @@
 # Table name: publishing_platforms
 #
 #  id                     :integer          not null, primary key
-#  name                   :string(255)
 #  subscriber_count       :integer
 #  sponsorship_rate       :integer
 #  notes                  :text
@@ -25,4 +24,9 @@
 #
 
 class VinePublishingPlatform < PublishingPlatform
+
+  def platform
+    'vine'
+  end
+
 end

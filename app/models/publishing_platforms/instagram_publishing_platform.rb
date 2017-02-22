@@ -3,7 +3,6 @@
 # Table name: publishing_platforms
 #
 #  id                     :integer          not null, primary key
-#  name                   :string(255)
 #  subscriber_count       :integer
 #  sponsorship_rate       :integer
 #  notes                  :text
@@ -25,4 +24,20 @@
 #
 
 class InstagramPublishingPlatform < PublishingPlatform
+
+  def platform
+    'instagram'
+  end
+
+  def self.information_fields
+    %w(handle)
+  end
+
+  def self.stats_fields
+    %w(
+      followers_count
+      engage_rate
+    )
+  end
+
 end

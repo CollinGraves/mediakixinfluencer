@@ -27,4 +27,9 @@
 #
 
 class TwitterPlatformCampaign < PlatformCampaign
+
+  def platform
+    'twitter'
+  end
+
 end

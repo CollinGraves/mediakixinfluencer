@@ -27,4 +27,9 @@
 #
 
 class SnapchatPlatformCampaign < PlatformCampaign
+
+  def platform
+    'snapchat'
+  end
+
 end

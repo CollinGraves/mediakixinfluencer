@@ -27,4 +27,9 @@
 #
 
 class FacebookPlatformCampaign < PlatformCampaign
+
+  def platform
+    'facebook'
+  end
+
 end

@@ -11,7 +11,10 @@
 #
 
 class PlatformAccount < ActiveRecord::Base
-  enum account_type: [ :personal, :manager ]
+  enum account_type: {
+    personal: 0,
+    manager: 1
+  }
 
   belongs_to :influencer
   belongs_to :publishing_platform

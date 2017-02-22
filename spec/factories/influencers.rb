@@ -34,8 +34,8 @@ FactoryGirl.define do
     email { Faker::Internet.email }
     phone { Faker::PhoneNumber.phone_number }
     age { Faker::Number.between(15, 70) }
-    gender { Influencer::GENDERS[Faker::Demographic.sex] }
-    ethnicity { Faker::Demographic.race }
+    gender { Influencer::GENDERS.values.sample }
+    ethnicity { Influencer.ethnicities.keys.sample }
     primary_language { Influencer.primary_languages.keys.sample }
     kids_age_range_list { Influencer::KIDS_AGE_RANGES.sample }
     pet_list { Influencer::PETS.sample }
