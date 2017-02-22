@@ -25,4 +25,9 @@
 #
 
 class TwitterPublishingPlatform < PublishingPlatform
+
+  def platform
+    'twitter'
+  end
+
 end

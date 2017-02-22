@@ -25,4 +25,9 @@
 #
 
 class FacebookPublishingPlatform < PublishingPlatform
+
+  def platform
+    'facebook'
+  end
+
 end

@@ -25,4 +25,9 @@
 #
 
 class BlogPublishingPlatform < PublishingPlatform
+
+  def platform
+    'blog'
+  end
+
 end

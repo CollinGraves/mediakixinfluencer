@@ -37,4 +37,29 @@ ActiveAdmin.register PublishingPlatform do
   filter :avg_screenshots, as: :numeric
   filter :created_at
   filter :updated_at
+
+  index do
+    selectable_column
+    column :id do |p|
+      link_to p.id, admin_publishing_platform_path(p.id)
+    end
+    column :platform
+    column :url do |p|
+      link_to p.url, p.url if p.url
+    end
+    column :handle
+    column :subscriber_count
+    column :followers_count
+    column :sponsorship_rate
+    column :monthly_posts
+    column :monthly_page_views
+    column :monthly_unique_visitor
+    column :avg_views
+    column :avg_opens
+    column :avg_screenshots
+    column :rate_dedicated
+    column :rate_integrated
+    column :engage_rate
+    actions
+  end
 end

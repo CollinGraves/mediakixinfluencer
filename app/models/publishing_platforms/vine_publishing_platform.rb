@@ -25,4 +25,9 @@
 #
 
 class VinePublishingPlatform < PublishingPlatform
+
+  def platform
+    'vine'
+  end
+
 end

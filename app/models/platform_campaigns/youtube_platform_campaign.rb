@@ -27,4 +27,9 @@
 #
 
 class YoutubePlatformCampaign < PlatformCampaign
+
+  def platform
+    'youtube'
+  end
+
 end

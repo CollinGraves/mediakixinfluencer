@@ -25,4 +25,9 @@
 #
 
 class YoutubePublishingPlatform < PublishingPlatform
+
+  def platform
+    'youtube'
+  end
+
 end

@@ -25,4 +25,9 @@
 #
 
 class PinterestPublishingPlatform < PublishingPlatform
+
+  def platform
+    'pinterest'
+  end
+
 end

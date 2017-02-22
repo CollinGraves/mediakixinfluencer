@@ -25,4 +25,9 @@
 #
 
 class InstagramPublishingPlatform < PublishingPlatform
+
+  def platform
+    'instagram'
+  end
+
 end

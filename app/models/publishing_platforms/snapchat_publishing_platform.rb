@@ -25,4 +25,9 @@
 #
 
 class SnapchatPublishingPlatform < PublishingPlatform
+
+  def platform
+    'snapchat'
+  end
+
 end
