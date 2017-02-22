@@ -24,17 +24,17 @@ ActiveAdmin.register PublishingPlatform do
   filter :id, as: :numeric, label: "Publishing Platform ID"
   filter :url, as: :string
   filter :handle, as: :string
-  filter :subscriber_count, as: :numeric
-  filter :sponsorship_rate, as: :numeric
-  filter :monthly_posts, as: :numeric
-  filter :monthly_page_views, as: :numeric
-  filter :avg_views, as: :numeric
-  filter :rate_dedicated, as: :numeric
-  filter :rate_integrated, as: :numeric
-  filter :followers_count, as: :numeric
-  filter :engage_rate, as: :numeric
-  filter :avg_opens, as: :numeric
-  filter :avg_screenshots, as: :numeric
+  filter :subscriber_count, as: :range_select
+  filter :sponsorship_rate, as: :range_select
+  filter :monthly_posts, as: :range_select
+  filter :monthly_page_views, as: :range_select
+  filter :avg_views, as: :range_select
+  filter :rate_dedicated, as: :range_select
+  filter :rate_integrated, as: :range_select
+  filter :followers_count, as: :range_select
+  filter :engage_rate, as: :range_select
+  filter :avg_opens, as: :range_select
+  filter :avg_screenshots, as: :range_select
   filter :created_at
   filter :updated_at
 
