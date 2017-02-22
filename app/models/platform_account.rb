@@ -18,4 +18,7 @@ class PlatformAccount < ActiveRecord::Base
 
   belongs_to :influencer
   belongs_to :publishing_platform
+
+  validates :influencer_id, presence: true
+  validates :publishing_platform_id, presence: true
 end

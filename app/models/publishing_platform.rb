@@ -35,9 +35,9 @@ class PublishingPlatform < ActiveRecord::Base
     pinterest
   )
 
-  has_many :platform_accounts
+  has_many :platform_accounts, dependent: :destroy
   has_many :influencers, through: :platform_accounts
-  has_many :platform_campaigns
+  has_many :platform_campaigns, dependent: :nullify
 
   def platform
   end
