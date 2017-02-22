@@ -6,7 +6,7 @@ class BrandDecorator < Draper::Decorator
   end
 
   def category_list
-    object.categories.map(&:name).join(', ')
+    object.categories.pluck(:label).join(', ')
   end
 
 end

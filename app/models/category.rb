@@ -20,4 +20,6 @@ class Category < ActiveRecord::Base
 
   delegate :label, to: :parent_category, prefix: true, allow_nil: true
 
+  validates :label, presence: true
+
 end
