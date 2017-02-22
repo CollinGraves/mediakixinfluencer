@@ -40,6 +40,7 @@ gem 'validates_formatting_of'
 
 # Exposes countries in active admin
 gem 'country_select'
+gem 'activeadmin_addons'
 
 # Decorators - handle presentation logic
 gem 'draper'
