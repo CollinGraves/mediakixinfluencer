@@ -99,7 +99,9 @@ ActiveAdmin.register Influencer do
     column :name
     column :email
     column :country
-    column :publishing_platforms_list
+    column :publishing_platforms_list do |influencer|
+      link_to influencer.publishing_platforms_list, admin_publishing_platforms_path(q: {influencers_id_equals: influencer.id})
+    end
 
     actions
   end
