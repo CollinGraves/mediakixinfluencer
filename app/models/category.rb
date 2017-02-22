@@ -14,4 +14,10 @@ class Category < ActiveRecord::Base
 
   has_many :subcategories, class_name: "Category", foreign_key: "parent_id", dependent: :destroy
   belongs_to :parent_category, class_name: "Category", foreign_key: "parent_id"
+
+  scope :top_level, -> { where(parent_id: nil) }
+  scope :subcategories, -> { where.not(parent_id: nil) }
+
+  delegate :label, to: :parent_category, prefix: true, allow_nil: true
+
 end

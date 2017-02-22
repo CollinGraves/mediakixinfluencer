@@ -15,7 +15,7 @@ ActiveAdmin.register Brand do
     end
     column :name
     column :slug
-    column :campaigns_number
+    column :campaigns_count
     column :category_list
 
     actions
