@@ -33,7 +33,13 @@ ActiveAdmin.register PlatformAccount do
     f.semantic_errors *f.object.errors.keys
 
     f.inputs do
-      f.input :influencer_id
+      f.input :influencer_id,
+        as: :search_select,
+        url: admin_influencers_path,
+        fields: [:first_name, :last_name],
+        display_name: 'first_name',
+        minimum_input_length: 2,
+        order_by: 'first_name_desc'
       f.input :publishing_platform_id
       f.input :account_type
     end

@@ -69,4 +69,5 @@ class Influencer < ActiveRecord::Base
   has_many :brands, through: :campaigns
 
   accepts_nested_attributes_for :address
+
 end
