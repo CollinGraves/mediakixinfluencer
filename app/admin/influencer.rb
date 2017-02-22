@@ -29,7 +29,7 @@ ActiveAdmin.register Influencer do
   filter :first_name_or_last_name, as: :string, label: "Name"
   filter :email, as: :string
   filter :phone, as: :string
-  filter :age, as: :numeric
+  filter :age, as: :range_select
   filter :primary_language, as: :select, collection: Influencer.primary_languages
   filter :ethnicity, as: :select, collection: Influencer.ethnicities
   filter :gender, as: :select, collection: Influencer::GENDERS
@@ -53,35 +53,35 @@ ActiveAdmin.register Influencer do
   filter :publishing_platforms_id, as: :numeric, label: "Publishing Platform ID"
   filter :publishing_platforms_url, as: :string
   filter :publishing_platforms_handle, as: :string
-  filter :publishing_platforms_subscriber_count, as: :numeric
-  filter :publishing_platforms_sponsorship_rate, as: :numeric
-  filter :publishing_platforms_monthly_posts, as: :numeric
-  filter :publishing_platforms_monthly_page_views, as: :numeric
-  filter :publishing_platforms_avg_views, as: :numeric
-  filter :publishing_platforms_rate_dedicated, as: :numeric
-  filter :publishing_platforms_rate_integrated, as: :numeric
-  filter :publishing_platforms_followers_count, as: :numeric
-  filter :publishing_platforms_engage_rate, as: :numeric
-  filter :publishing_platforms_avg_opens, as: :numeric
-  filter :publishing_platforms_avg_screenshots, as: :numeric
+  filter :publishing_platforms_subscriber_count, as: :range_select
+  filter :publishing_platforms_sponsorship_rate, as: :range_select
+  filter :publishing_platforms_monthly_posts, as: :range_select
+  filter :publishing_platforms_monthly_page_views, as: :range_select
+  filter :publishing_platforms_avg_views, as: :range_select
+  filter :publishing_platforms_rate_dedicated, as: :range_select
+  filter :publishing_platforms_rate_integrated, as: :range_select
+  filter :publishing_platforms_followers_count, as: :range_select
+  filter :publishing_platforms_engage_rate, as: :range_select
+  filter :publishing_platforms_avg_opens, as: :range_select
+  filter :publishing_platforms_avg_screenshots, as: :range_select
 
   filter :platform_campaigns_type, as: :select, collection: PlatformCampaign::PLATFORMS.map {|platform| [platform.titleize, "#{platform.titleize}PlatformCampaign"] }
   filter :platform_campaigns_id, as: :numeric, label: "Platform Campaign ID"
   filter :platform_campaigns_date_live, as: :date_range
-  filter :platform_campaigns_clicks, as: :numeric
-  filter :platform_campaigns_comments_count, as: :numeric
-  filter :platform_campaigns_conversions, as: :numeric
-  filter :platform_campaigns_facebook_shares, as: :numeric
-  filter :platform_campaigns_twitter_shares, as: :numeric
-  filter :platform_campaigns_pins_count, as: :numeric
-  filter :platform_campaigns_num_views, as: :numeric
-  filter :platform_campaigns_likes, as: :numeric
-  filter :platform_campaigns_shares, as: :numeric
-  filter :platform_campaigns_num_posts, as: :numeric
-  filter :platform_campaigns_engagement, as: :numeric
-  filter :platform_campaigns_snaps, as: :numeric
-  filter :platform_campaigns_opens, as: :numeric
-  filter :platform_campaigns_retweets, as: :numeric
+  filter :platform_campaigns_clicks, as: :range_select
+  filter :platform_campaigns_comments_count, as: :range_select
+  filter :platform_campaigns_conversions, as: :range_select
+  filter :platform_campaigns_facebook_shares, as: :range_select
+  filter :platform_campaigns_twitter_shares, as: :range_select
+  filter :platform_campaigns_pins_count, as: :range_select
+  filter :platform_campaigns_num_views, as: :range_select
+  filter :platform_campaigns_likes, as: :range_select
+  filter :platform_campaigns_shares, as: :range_select
+  filter :platform_campaigns_num_posts, as: :range_select
+  filter :platform_campaigns_engagement, as: :range_select
+  filter :platform_campaigns_snaps, as: :range_select
+  filter :platform_campaigns_opens, as: :range_select
+  filter :platform_campaigns_retweets, as: :range_select
 
   filter :campaigns_id, as: :numeric, label: "Campaign ID"
   filter :campaigns_campaign_name, as: :string
