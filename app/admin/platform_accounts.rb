@@ -37,7 +37,7 @@ ActiveAdmin.register PlatformAccount do
         as: :search_select,
         url: admin_influencers_path,
         fields: [:first_name, :last_name],
-        display_name: 'first_name',
+        display_name: 'name',
         minimum_input_length: 2,
         order_by: 'first_name_desc'
       f.input :publishing_platform_id

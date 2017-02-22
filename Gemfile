@@ -45,6 +45,9 @@ gem 'activeadmin_addons'
 # Decorators - handle presentation logic
 gem 'draper'
 
+# Json serialization
+gem 'active_model_serializers'
+
 group :production do
   gem 'rails_12factor'
 end

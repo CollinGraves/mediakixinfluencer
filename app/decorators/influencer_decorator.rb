@@ -1,6 +1,10 @@
 class InfluencerDecorator < Draper::Decorator
   delegate_all
 
+  def serializer_class
+    InfluencerSerializer
+  end
+
   def name
     [object.first_name, object.last_name].join(' ')
   end
