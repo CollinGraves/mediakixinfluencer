@@ -32,4 +32,13 @@ class InstagramPlatformCampaign < PlatformCampaign
     'instagram'
   end
 
+  def self.stats_fields
+    %w(
+      comments_count
+      likes
+      num_posts
+      engagement
+    )
+  end
+
 end

@@ -48,6 +48,25 @@ class PlatformCampaign < ActiveRecord::Base
   def platform
   end
 
+  def self.stats_fields
+    %w(
+      clicks
+      comments_count
+      conversions
+      facebook_shares
+      twitter_shares
+      pins_count
+      num_views
+      likes
+      shares
+      num_posts
+      engagement
+      snaps
+      opens
+      retweets
+    )
+  end
+
   private
 
   def set_brand

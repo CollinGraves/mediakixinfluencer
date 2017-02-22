@@ -32,4 +32,15 @@ class BlogPlatformCampaign < PlatformCampaign
     'blog'
   end
 
+  def self.stats_fields
+    %w(
+      clicks
+      comments_count
+      conversions
+      facebook_shares
+      twitter_shares
+      pins_count
+    )
+  end
+
 end

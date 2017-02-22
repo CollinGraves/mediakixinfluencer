@@ -78,8 +78,29 @@ ActiveAdmin.register PlatformCampaign do
     column :snaps
     column :opens
     column :retweets
+    column :created_at
+    column :updated_at
 
     actions
+  end
+
+  show do
+    attributes_table do
+      row :id
+      row :platform
+      row :brand
+      row :campaign_name
+      row :publishing_platform
+      row :date_live
+    end
+
+    panel "Stats" do
+      attributes_table_for platform_campaign do
+        platform_campaign.class.stats_fields.each do |field|
+          row field
+        end
+      end
+    end
   end
 
   controller do

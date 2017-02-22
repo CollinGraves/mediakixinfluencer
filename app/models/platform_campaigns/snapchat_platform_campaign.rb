@@ -32,4 +32,12 @@ class SnapchatPlatformCampaign < PlatformCampaign
     'snapchat'
   end
 
+  def self.stats_fields
+    %w(
+      snaps
+      opens
+      conversions
+    )
+  end
+
 end

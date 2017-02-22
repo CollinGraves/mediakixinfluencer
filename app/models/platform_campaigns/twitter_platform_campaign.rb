@@ -32,4 +32,11 @@ class TwitterPlatformCampaign < PlatformCampaign
     'twitter'
   end
 
+  def self.stats_fields
+    %w(
+      likes
+      retweets
+    )
+  end
+
 end
