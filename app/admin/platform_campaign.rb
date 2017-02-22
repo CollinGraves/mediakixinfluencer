@@ -1,6 +1,6 @@
 ActiveAdmin.register PlatformCampaign do
-  permit_params :brand_id,
-    :publishing_platform_id,
+  permit_params :publishing_platform_id,
+    :campaign_id,
     :type,
     :clicks,
     :comments_count,
@@ -113,11 +113,19 @@ ActiveAdmin.register PlatformCampaign do
         f.input :id, input_html: { disabled: true }
         f.input :platform, input_html: { disabled: true }
       end
+      f.input :date_live, as: :date_time_picker
     end
 
     f.inputs "Associations" do
-      f.input :campaign
-      f.input :publishing_platform
+      f.input :campaign_id,
+        as: :search_select,
+        url: admin_campaigns_path,
+        fields: [:campaign_name],
+        display_name: 'campaign_name',
+        minimum_input_length: 2,
+        order_by: 'campaign_name_desc'
+
+      f.input :publishing_platform_id
     end
 
     f.inputs "Stats" do

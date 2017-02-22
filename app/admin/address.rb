@@ -1,4 +1,6 @@
 ActiveAdmin.register Address do
+  menu parent: "Influencers"
+
   permit_params :primary_address,
                 :secondary_address,
                 :city,

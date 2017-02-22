@@ -1,4 +1,6 @@
 ActiveAdmin.register Influencer do
+  menu parent: "Influencers"
+
   active_admin_importable
 
   decorate_with InfluencerDecorator
@@ -152,8 +154,18 @@ ActiveAdmin.register Influencer do
 
     panel "Associations" do
       attributes_table_for influencer do
-        row :publishing_platforms do |i|
-          link_to i.publishing_platforms_list, admin_publishing_platforms_path(q: {influencers_id_equals: i.id})
+        row "-" do |i|
+          if i.publishing_platforms.present?
+            link_to "List all publishing platforms associated", admin_publishing_platforms_path(q: {influencers_id_equals: i.id})
+          else
+            "No Publishing Platforms are associated with this influencer"
+          end
+        end
+
+        influencer.publishing_platforms.each do |publishing_platform|
+          row :publishing_platform do
+            link_to "#{publishing_platform.platform.titleize} ##{publishing_platform.id}", admin_publishing_platform_path(publishing_platform)
+          end
         end
       end
     end
