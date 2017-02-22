@@ -95,8 +95,12 @@ ActiveAdmin.register PublishingPlatform do
     f.semantic_errors *f.object.errors.keys
 
     f.inputs "Information" do
-      f.input :id, input_html: { disabled: true }
-      f.input :platform, input_html: { disabled: true }
+      if f.object.new_record?
+        f.input :type, as: :select, collection: PublishingPlatform::PLATFORMS.map {|type| "#{type.titleize}PublishingPlatform" }
+      else
+        f.input :id, input_html: { disabled: true }
+        f.input :platform, input_html: { disabled: true }
+      end
       f.input :sponsorship_rate
       publishing_platform.class.information_fields.each do |field|
         f.input field

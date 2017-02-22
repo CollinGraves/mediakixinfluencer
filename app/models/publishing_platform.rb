@@ -39,12 +39,30 @@ class PublishingPlatform < ActiveRecord::Base
   has_many :influencers, through: :platform_accounts
   has_many :platform_campaigns
 
+  def platform
+  end
+
   def self.information_fields
-    []
+    %w(
+      url
+      handle
+    )
   end
 
   def self.stats_fields
-    []
+    %w(
+      subscriber_count
+      followers_count
+      monthly_posts
+      monthly_page_views
+      monthly_unique_visitor
+      avg_views
+      avg_opens
+      avg_screenshots
+      rate_dedicated
+      rate_integrated
+      engage_rate
+    )
   end
 
 end
