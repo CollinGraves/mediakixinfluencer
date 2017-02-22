@@ -1,18 +1,52 @@
 ActiveAdmin.register Brand do
-  permit_params :name, :slug
 
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-# permit_params :list, :of, :attributes, :on, :model
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if params[:action] == 'create' && current_user.admin?
-#   permitted
-# end
+  decorate_with BrandDecorator
 
+  permit_params :name,
+    :slug,
+    category_ids: []
+
+  filter :name, as: :string
+  filter :slug, as: :string
+
+  index do
+    selectable_column
+
+    column :id do |obj|
+      link_to obj.id, admin_brand_path(obj)
+    end
+    column :name
+    column :slug
+    column :campaigns_count
+    column :category_list
+
+    actions
+  end
+
+  show do
+    attributes_table do
+      row :id
+      row :name
+      row :slug
+      row :campaigns_count
+      row :category_list
+    end
+  end
+
+  form do |f|
+    f.inputs do
+      f.input :name
+      f.input :slug
+      f.input :category_ids, as: :tags, collection: Category.all, display_name: :label
+    end
+
+    f.actions
+  end
+
+  controller do
+    def scoped_collection
+      super.includes(:campaigns, :categories)
+    end
+  end
 
 end

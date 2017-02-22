@@ -13,5 +13,7 @@
 class Campaign < ActiveRecord::Base
   belongs_to :brand
 
-  has_many :platform_campaigns
+  has_many :platform_campaigns, dependent: :nullify
+
+  validates :campaign_name, presence: true
 end

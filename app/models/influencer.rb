@@ -70,4 +70,8 @@ class Influencer < ActiveRecord::Base
 
   accepts_nested_attributes_for :address
 
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :email, presence: true
+
 end
