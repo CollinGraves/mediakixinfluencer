@@ -10,7 +10,7 @@ class InfluencerDecorator < Draper::Decorator
   end
 
   def country
-    object.address && object.address.country
+    object.address && ISO3166::Country.translations[object.address.country]
   end
 
   def publishing_platforms

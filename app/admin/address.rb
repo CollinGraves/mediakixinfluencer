@@ -14,6 +14,7 @@ ActiveAdmin.register Address do
   filter :primary_address_or_secondary_address, as: :string, label: "Address"
 
   index do
+    selectable_column
     column :id
     column :influencer do |address|
       link_to address.influencer.decorate.name, admin_influencer_path(address.influencer)
