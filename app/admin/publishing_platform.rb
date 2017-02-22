@@ -117,4 +117,8 @@ ActiveAdmin.register PublishingPlatform do
     f.actions
   end
 
+  action_item :associate_to_influencer, only: :show do
+    link_to 'Associate to Influencer', new_admin_platform_account_path(publishing_platform_id: publishing_platform.id)
+  end
+
 end

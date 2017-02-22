@@ -40,10 +40,11 @@ ActiveAdmin.register PlatformAccount do
         display_name: 'name',
         minimum_input_length: 2,
         order_by: 'first_name_desc'
-      f.input :publishing_platform_id
+      f.input :publishing_platform_id, input_html: { value: params[:publishing_platform_id] }
       f.input :account_type
     end
 
+    f.actions
   end
 
   controller do
