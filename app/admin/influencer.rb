@@ -1,4 +1,6 @@
 ActiveAdmin.register Influencer do
+  menu parent: "Influencers"
+
   active_admin_importable
 
   decorate_with InfluencerDecorator

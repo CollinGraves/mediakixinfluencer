@@ -1,4 +1,5 @@
 ActiveAdmin.register Brand do
+  menu parent: "Brands"
 
   decorate_with BrandDecorator
 

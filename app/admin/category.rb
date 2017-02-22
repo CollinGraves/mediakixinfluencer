@@ -1,4 +1,5 @@
 ActiveAdmin.register Category do
+  menu parent: "Brands"
 
   permit_params :label,
     :parent_id
