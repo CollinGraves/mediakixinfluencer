@@ -13,7 +13,7 @@ class InfluencerDecorator < Draper::Decorator
     object.address && ISO3166::Country.translations[object.address.country]
   end
 
-  def publishing_platforms
+  def publishing_platforms_list
     object.publishing_platforms.map do |publishing|
       publishing.type.sub("PublishingPlatform", "")
     end.join(", ")

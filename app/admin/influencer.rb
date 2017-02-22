@@ -99,7 +99,7 @@ ActiveAdmin.register Influencer do
     column :name
     column :email
     column :country
-    column :publishing_platforms
+    column :publishing_platforms_list
 
     actions
   end
@@ -137,11 +137,22 @@ ActiveAdmin.register Influencer do
 
     panel "Address Details" do
       attributes_table_for influencer.address do
+        row :id do |a|
+          link_to a.id, admin_address_path(a)
+        end
         row :country
         row :state
         row :city
         row :primary_address
         row :secondary_address
+      end
+    end
+
+    panel "Associations" do
+      attributes_table_for influencer do
+        row :publishing_platforms do |i|
+          link_to i.publishing_platforms_list, admin_publishing_platforms_path(q: {influencers_id_equals: i.id})
+        end
       end
     end
   end
