@@ -55,9 +55,10 @@ end
 group :development, :test do
   gem 'dotenv-rails'
   gem 'rspec-rails'
-  gem 'factory_girl_rails'
-  gem 'faker'
 end
+
+gem 'factory_girl_rails'
+gem 'faker'
 
 group :development do
   gem 'pry-rails'
