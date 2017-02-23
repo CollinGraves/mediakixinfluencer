@@ -27,4 +27,10 @@ ActiveAdmin.register User do
     f.actions
   end
 
+  controller do
+    def scoped_collection
+      super.where(type: nil)
+    end
+  end
+
 end
